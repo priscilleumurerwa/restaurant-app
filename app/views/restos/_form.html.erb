@@ -1,0 +1,50 @@
+<%= form_with(model: resto, local: true) do |form| %>
+  <% if resto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resto.errors.count, "error") %> prohibited this resto from being saved:</h2>
+
+      <ul>
+        <% resto.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+  <select class="custom-select">
+<a class="navbar-brand" href="#">Menu</a>
+<option selected> Menu</option>
+<option selected> Breakfast</option>
+<option value="1">Lunch</option>
+<option value="2">Dinner</option>
+<option value="3">Super</option>
+</select>
+    
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
